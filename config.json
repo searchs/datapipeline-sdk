@@ -1,0 +1,6 @@
+{
+  "kafka_brokers": "localhost:9092",
+  "kafka_topic": "test-topic",
+  "log_file": "data_pipeline.log",
+  "output_file": "output.json"
+}
