@@ -1,0 +1,3 @@
+datadog==0.49.1
+prometheus==0.3.0
+pytest
