@@ -2,5 +2,9 @@
   "kafka_brokers": "localhost:9092",
   "kafka_topic": "test-topic",
   "log_file": "data_pipeline.log",
-  "output_file": "output.json"
+  "output_file": "output.json",
+  "datadog_api_key": "SOLO_API_KEY",
+  "datadog_app_key": "SOLO_APP_KEY",
+  "metrics_port": 8000,
+  "plugins": [{ "module": "plugins.sample_plugin", "class": "SamplePlugin" }]
 }

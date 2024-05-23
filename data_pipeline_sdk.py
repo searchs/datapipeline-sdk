@@ -2,7 +2,7 @@ from kafka_ingestion import KafkaIngestion
 from transformation import Transformer
 from output import DataOutput
 from config import Config
-from logger import Logger
+from datadog_logger import DatadogLogger
 from metrics import Metrics
 from plugin_manager import PluginManager
 from error_handling import IngestionError, TransformationError, OutputError
@@ -12,7 +12,7 @@ class DataPipelineSDK:
         self.config = Config.load_config(config_file)
         self.ingestion = KafkaIngestion(self.config['kafka_brokers'], self.config['kafka_topic'])
         self.plugin_manager = PluginManager(self.config['plugins'])
-        self.logger = Logger.setup_logger('data_pipeline', self.config['log_file'])
+        self.logger = DatadogLogger(api_key=self.config['datadog_api_key'], app_key=self.config['datadog_app_key'])
         self.metrics = Metrics()
         self.metrics.start_server(self.config.get('metrics_port', 8000))
 

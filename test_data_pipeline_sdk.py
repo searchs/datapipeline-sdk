@@ -1,5 +1,6 @@
 import pytest
 from data_pipeline_sdk import DataPipelineSDK
+from output import DataOutput
 
 @pytest.fixture
 def sdk():
